@@ -12,35 +12,51 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Login Page'),
-      ),
-      body: Column(
-        children: [
-          Text('Selamat'),
-          TextField(
-            onChanged: (val) {
-              setState(() {});
-            },
-            controller: textEditingController,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
+
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Selamat Datang '),
+            Text('di '),
+            Text('MyFavorite App',style: TextStyle(fontSize: 30),),
+            SizedBox(height: 20,),
+            TextField(
+              onChanged: (val) {
+                setState(() {});
+              },
+              controller: textEditingController,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
               ),
             ),
-          ),
-          textEditingController.text.isNotEmpty
-              ? RaisedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (ctx) => HomePage(
-                              nama: textEditingController.text,
-                            ),),);
-                  },
-                  child: Text('Lanjut'),
+
+                AnimatedOpacity(
+                  opacity: textEditingController.text.isEmpty ? 0 : 1 ,
+                  curve: Curves.easeInOut,
+                  duration: Duration(milliseconds: 500),
+                  child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      RaisedButton(
+                          onPressed: () {
+                            Navigator.of(context).pushReplacement(MaterialPageRoute(
+                                builder: (ctx) => HomePage(
+                                      nama: textEditingController.text,
+                                    ),),);
+                          },
+                          child: Text('Lanjut'),
+                        ),
+                    ],
+                  ),
                 )
-              : SizedBox()
-        ],
+
+          ],
+        ),
       ),
     );
   }
