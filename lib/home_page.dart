@@ -59,14 +59,22 @@ class _HomePageState extends State<HomePage> {
             Expanded(flex: 1, child: SizedBox()),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Hai, '),
-                  Text(
-                    '${widget.nama}',
-                    style: TextStyle(fontSize: 25),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text('Hai, '),
+                      Text(
+                        '${widget.nama}',
+                        style: TextStyle(fontSize: 25),
+                      ),
+
+                    ],
                   ),
+                  SizedBox(height: 10,),
+                  Text('Silahkan Pilih Anime '),
                 ],
               ),
             ),
@@ -79,6 +87,7 @@ class _HomePageState extends State<HomePage> {
                     jumlah: listSAO.length,
                     warna: Colors.red,
                     listItem: listSAO,
+
                   ),
                   TemplateCard(
                     judul: 'Naruto',
@@ -126,6 +135,7 @@ class TemplateCard extends StatelessWidget {
               builder: (ctx) => KategoriPage(
                     kategori: judul,
                     listItem: listItem,
+                warna: warna,
                   )));
         },
         child: Container(

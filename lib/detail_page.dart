@@ -5,13 +5,15 @@ class DetailPage extends StatelessWidget {
   final String imageUrl;
   final String judul;
   final String deskripsi;
+  final Color warna;
 
-  const DetailPage({Key key, this.index, this.imageUrl , this.judul, this.deskripsi}) : super(key: key);
+  const DetailPage({Key key, this.index, this.imageUrl , this.judul, this.deskripsi, this.warna}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: warna.withOpacity(0.5),
         title: Text('$judul'),
       ),
       body: Hero(
@@ -30,6 +32,7 @@ class DetailPage extends StatelessWidget {
               ),
               Text(
                 '$deskripsi',
+                textAlign: TextAlign.justify,
                 style: TextStyle(
                   color: Colors.grey,
                 ),
