@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_favorite/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -18,10 +19,8 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           Text('Selamat'),
           TextField(
-            onChanged: (val){
-              setState(() {
-
-              });
+            onChanged: (val) {
+              setState(() {});
             },
             controller: textEditingController,
             decoration: InputDecoration(
@@ -32,7 +31,12 @@ class _LoginPageState extends State<LoginPage> {
           ),
           textEditingController.text.isNotEmpty
               ? RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (ctx) => HomePage(
+                              nama: textEditingController.text,
+                            ),),);
+                  },
                   child: Text('Lanjut'),
                 )
               : SizedBox()
