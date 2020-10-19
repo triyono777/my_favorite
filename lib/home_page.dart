@@ -15,28 +15,28 @@ class _HomePageState extends State<HomePage> {
   List<ItemModel> listMovie = <ItemModel>[
     ItemModel(
       judul: 'Naruto',
-      deskripsi: 'Filem Naruto',
+      deskripsi: 'Naruto Uzumaki (うずまき ナルト Uzumaki Naruto) adalah tokoh fiktif dari serial anime dan manga Naruto. Ia merupakan tokoh utama dalam serial ini. Ia digambarkan sebagai bocah berambut pirang dan bermata biru. Di pipinya ada semacam guratan yang mirip seperti kumis milik karakter Doraemon dalam manga Doraemon. Ia sering terlihat memakai jaket dan celana panjang berwarna jingga. Di dahinya ada ikat kepala berwarna biru dengan lambang desa kelahirannya.',
       imageurl: 'https://upload.wikimedia.org/wikipedia/id/3/36/Naruto_Uzumaki.png',
     ),
     ItemModel(
       judul: 'Naruto',
       deskripsi: 'Filem Naruto',
-      imageurl: 'Imge url',
+
     ),
     ItemModel(
       judul: 'Naruto',
       deskripsi: 'Filem Naruto',
-      imageurl: 'Imge url',
+
     ),
     ItemModel(
       judul: 'Naruto',
       deskripsi: 'Filem Naruto',
-      imageurl: 'Imge url',
+
     ),
     ItemModel(
       judul: 'Naruto',
       deskripsi: 'Filem Naruto',
-      imageurl: 'Imge url',
+
     ),
   ];
 

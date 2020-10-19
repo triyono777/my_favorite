@@ -26,16 +26,22 @@ class _KategoriPageState extends State<KategoriPage> {
           (index) => Hero(
             tag: index,
             child: GestureDetector(
-              onTap: (){
-                Navigator.of(context ).push(MaterialPageRoute(builder: (ctx)=>DetailPage(index: index,imageUrl: widget.listItem[index].imageurl,)));
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (ctx) => DetailPage(
+                      index: index,
+                      imageUrl: widget.listItem[index].imageurl,
+                      judul: widget.listItem[index].judul,
+                      deskripsi: widget.listItem[index].deskripsi,
+                    ),
+                  ),
+                );
               },
               child: Card(
                 child: Container(
                   decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage(widget.listItem[index].imageurl),
-                      fit: BoxFit.contain
-                    ),
+                    image: DecorationImage(image: NetworkImage(widget.listItem[index].imageurl??'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png'), fit: BoxFit.contain),
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
