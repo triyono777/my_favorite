@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_favorite/detail_page.dart';
 import 'package:my_favorite/item_model.dart';
 
 class KategoriPage extends StatefulWidget {
@@ -19,10 +20,33 @@ class _KategoriPageState extends State<KategoriPage> {
         title: Text('${widget.kategori}'),
       ),
       body: GridView.count(
-        crossAxisCount: widget.listItem.length,
+        crossAxisCount: 2,
         children: List.generate(
           widget.listItem.length,
-          (index) => Text(widget.listItem[index].judul),
+          (index) => Hero(
+            tag: index,
+            child: GestureDetector(
+              onTap: (){
+                Navigator.of(context ).push(MaterialPageRoute(builder: (ctx)=>DetailPage(index: index,imageUrl: widget.listItem[index].imageurl,)));
+              },
+              child: Card(
+                child: Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage(widget.listItem[index].imageurl),
+                      fit: BoxFit.contain
+                    ),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(widget.listItem[index].judul),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );

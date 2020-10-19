@@ -16,6 +16,49 @@ class _HomePageState extends State<HomePage> {
     ItemModel(
       judul: 'Naruto',
       deskripsi: 'Filem Naruto',
+      imageurl: 'https://upload.wikimedia.org/wikipedia/id/3/36/Naruto_Uzumaki.png',
+    ),
+    ItemModel(
+      judul: 'Naruto',
+      deskripsi: 'Filem Naruto',
+      imageurl: 'Imge url',
+    ),
+    ItemModel(
+      judul: 'Naruto',
+      deskripsi: 'Filem Naruto',
+      imageurl: 'Imge url',
+    ),
+    ItemModel(
+      judul: 'Naruto',
+      deskripsi: 'Filem Naruto',
+      imageurl: 'Imge url',
+    ),
+    ItemModel(
+      judul: 'Naruto',
+      deskripsi: 'Filem Naruto',
+      imageurl: 'Imge url',
+    ),
+  ];
+
+  List<ItemModel> listMusic = <ItemModel>[
+    ItemModel(
+      judul: 'Naruto',
+      deskripsi: 'Filem Naruto',
+      imageurl: 'Imge url',
+    ),
+  ];
+  List<ItemModel> listBook = <ItemModel>[
+    ItemModel(
+      judul: 'Naruto',
+      deskripsi: 'Filem Naruto',
+      imageurl: 'Imge url',
+    ),
+  ];
+
+  List<ItemModel> listAnime = <ItemModel>[
+    ItemModel(
+      judul: 'Naruto',
+      deskripsi: 'Filem Naruto',
       imageurl: 'Imge url',
     ),
   ];
@@ -34,24 +77,27 @@ class _HomePageState extends State<HomePage> {
               children: [
                 TemplateCard(
                   judul: 'Movie',
-                  jumlah: 6,
+                  jumlah: listMovie.length,
                   warna: Colors.red,
                   listItem: listMovie,
                 ),
                 TemplateCard(
                   judul: 'Music',
-                  jumlah: 6,
+                  jumlah: listMusic.length,
                   warna: Colors.green,
+                  listItem: listMusic,
                 ),
                 TemplateCard(
                   judul: 'Book',
-                  jumlah: 6,
+                  jumlah: listBook.length,
                   warna: Colors.purple,
+                  listItem: listBook,
                 ),
                 TemplateCard(
                   judul: 'Anime',
-                  jumlah: 6,
+                  jumlah: listAnime.length,
                   warna: Colors.orange,
+                  listItem: listAnime,
                 ),
               ],
             ),
@@ -72,7 +118,8 @@ class TemplateCard extends StatelessWidget {
     Key key,
     this.judul = 'judul',
     this.jumlah,
-    this.warna = Colors.red, this.listItem,
+    this.warna = Colors.red,
+    this.listItem,
   }) : super(key: key);
 
   @override
@@ -84,7 +131,7 @@ class TemplateCard extends StatelessWidget {
           Navigator.of(context).push(MaterialPageRoute(
               builder: (ctx) => KategoriPage(
                     kategori: judul,
-                listItem: listItem,
+                    listItem: listItem,
                   )));
         },
         child: Container(
